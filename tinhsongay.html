@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&family=Comfortaa:wght@500&family=Inconsolata:wght@500&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            font-family: 'Baloo Chettan 2', cursive;
+            font-family: 'Comfortaa', cursive;
+            font-family: 'Inconsolata', monospace;
+        }
+    </style>
+</head>
+<body>
+<h1>Kiểm tra số ngày trong tháng</h1>
+<input type="number" min="1" max="12" id="month" placeholder="Nhập tháng" style="width: 10%">
+<button onclick="check_month()">Check</button>
+<p id="re">Đay là chỗ hiển thị kết quả</p>
+<script>
+  let thang1 = "1";
+  let thang2 = "2";
+  let thang3 = "3";
+  let thang4 = "4";
+  let thang5 = "5";
+  let thang6 = "6";
+  let thang7 = "7";
+  let thang8 = "8";
+  let thang9 = "9";
+  let thang10 = "10";
+  let thang11 = "11";
+  let thang12 = "12";
+  function check_month() {
+    let thang = document.getElementById("month").value;
+    switch (thang) {
+      case thang1:
+      case thang3:
+      case thang5:
+      case thang7:
+      case thang8:
+      case thang10:
+      case thang12:
+        document.getElementById("re").innerHTML = "Tháng " + thang + " có 31 ngày"
+            break;
+      case thang4:
+      case thang6:
+      case thang9:
+      case thang11:
+        document.getElementById("re").innerHTML =  "Tháng " + thang + " có 30 ngày"
+            break;
+      case thang2:
+        document.getElementById("re").innerHTML =  "Tháng " + thang + " có 28 hoặc 29 ngày"
+            break;
+      default:
+        document.getElementById("re").innerHTML = "Vui lòng nhập lại tháng"
+    }
+  }
+</script>
+</body>
+</html>
